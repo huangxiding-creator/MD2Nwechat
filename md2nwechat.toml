@@ -31,8 +31,8 @@ account_list = zongbaozhisheng,gongchengbao,zongbaoshuo
 # 总包之声公众号
 [account.zongbaozhisheng]
 name = 总包之声
-appid = wx937e6194af9dabd8
-secret = d5ba9b16e9bd109b0cd906244edb74e0
+appid = your_appid_here
+secret = your_secret_here
 enabled = true
 # 该账号的主题偏好
  preferred_themes = autumn-warm,elegant-gold,apple
@@ -40,16 +40,16 @@ enabled = true
 # 工程豹公众号
 [account.gongchengbao]
 name = 工程豹
-appid = wxab4386f9c12d3636
-secret = ff9f895ed854f5df15ff88ec8b69f818
+appid = your_appid_here
+secret = your_secret_here
 enabled = true
 preferred_themes = ocean-calm,bytedance,sports
 
 # 总包说公众号
 [account.zongbaoshuo]
 name = 总包说
-appid = wx580e54435d78a2b7
-secret = a3a294fbe9805b4cf65927d1282ab076
+appid = your_appid_here
+secret = your_secret_here
 enabled = true
 preferred_themes = spring-fresh,chinese,focus-green
 
@@ -64,7 +64,7 @@ timeout = 30
 # provider: zhipu (智谱), modelscope, openai, openrouter
 provider = zhipu
 # 智谱大模型 API Key
-api_key = 810287c9375844c1a15fc546721cd69c.xnkuiMfecV06kE8q
+api_key = your_zhipu_api_key_here
 api_base = https://open.bigmodel.cn/api/paas/v4/
 model = cogview-3-plus
 size = 1024x1024

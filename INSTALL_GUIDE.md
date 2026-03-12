@@ -57,11 +57,11 @@ go build -o md2wechat.exe ./cmd/md2wechat
 
 编辑 `md2nwechat.toml` 文件，填入必要的 API Key：
 
-### 已配置的智谱大模型 API Key ✅
+### 智谱大模型 API Key 配置
 ```toml
 [images]
 provider = zhipu
-api_key = 810287c9375844c1a15fc546721cd69c.xnkuiMfecV06kE8q
+api_key = your_zhipu_api_key_here
 api_base = https://open.bigmodel.cn/api/paas/v4/
 model = cogview-3-plus
 ```
