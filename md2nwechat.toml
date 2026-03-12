@@ -1,0 +1,82 @@
+# MD2Nwechat 配置文件
+
+# TOML 格式（支持 .toml 手缀）
+
+[general]
+# Markdown 文件夹路径
+markdown_folder = "./markdown"
+# 封面图片文件夹路径
+cover_folder = "./covers"
+# 默认封面图片（当找不到对应封面时使用）
+default_cover = ./cover.jpg
+# 转换模式: api（使用 md2wechat.cn API）或 ai（使用 AI 生成）
+convert_mode = api
+# 发送间隔（秒）- 避免触发微信 API 限流
+send_interval = 3
+# 最大重试次数
+max_retries = 3
+# 日志级别：debug, info, warn, error
+log_level = info
+# 是否启用详细输出
+verbose = true
+
+# 主题轮换列表（每篇文章依次使用不同主题）
+rotation_themes = autumn-warm,spring-fresh,ocean-calm,elegant-gold,minimal-blue,focus-green
+
+[accounts]
+# 账号列表（用逗号分隔，账号标识）
+# 推送时会按顺序轮换使用这些账号
+account_list = zongbaozhisheng,gongchengbao,zongbaoshuo
+
+# 总包之声公众号
+[account.zongbaozhisheng]
+name = 总包之声
+appid = wx937e6194af9dabd8
+secret = d5ba9b16e9bd109b0cd906244edb74e0
+enabled = true
+# 该账号的主题偏好
+ preferred_themes = autumn-warm,elegant-gold,apple
+
+# 工程豹公众号
+[account.gongchengbao]
+name = 工程豹
+appid = wxab4386f9c12d3636
+secret = ff9f895ed854f5df15ff88ec8b69f818
+enabled = true
+preferred_themes = ocean-calm,bytedance,sports
+
+# 总包说公众号
+[account.zongbaoshuo]
+name = 总包说
+appid = wx580e54435d78a2b7
+secret = a3a294fbe9805b4cf65927d1282ab076
+enabled = true
+preferred_themes = spring-fresh,chinese,focus-green
+
+[api]
+# md2wechat.cn API 配置
+api_key =
+api_base_url = https://www.md2wechat.cn
+timeout = 30
+
+[images]
+# 图片生成服务配置
+# provider: zhipu (智谱), modelscope, openai, openrouter
+provider = zhipu
+# 智谱大模型 API Key
+api_key = 810287c9375844c1a15fc546721cd69c.xnkuiMfecV06kE8q
+api_base = https://open.bigmodel.cn/api/paas/v4/
+model = cogview-3-plus
+size = 1024x1024
+compress = true
+max_width = 1920
+max_size_mb = 5
+
+[advanced]
+# 批量处理时的并发数
+concurrency = 1
+# 失败时是否继续处理下一篇文章
+continue_on_error = true
+# 保存处理状态（用于断点续传）
+save_state = true
+state_file = ./md2nwechat_state.json
